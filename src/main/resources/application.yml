@@ -1,0 +1,97 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: app-usuarios
+        uri: lb://app-usuarios
+        predicates:          - Path=/api/usuarios/**
+        filters:          - StripPrefix=2
+      - id: app-muro
+        uri: lb://app-muro
+        predicates:
+          - Path=/api/muro/**
+        filters:
+          - StripPrefix=2      - id: app-estadistica
+        uri: lb://app-estadistica
+        predicates:
+          - Path=/api/estadistica/**
+        filters:
+          - StripPrefix=2
+      - id: app-autenticacion
+        uri: lb://app-autenticacion
+        predicates:
+          - Path=/api/autenticacion/**
+        filters:
+          - StripPrefix=2
+      - id: app-registro
+        uri: lb://app-registro
+        predicates:
+          - Path=/api/registro/**
+        filters:
+          - StripPrefix=2   
+      - id: app-proyectos
+        uri: lb://app-proyectos
+        predicates:
+          - Path=/api/proyectos/**
+        filters:
+          - StripPrefix=2     
+      - id: app-subscripciones
+        uri: lb://app-subscripciones
+        predicates:
+          - Path=/api/subscripciones/**
+        filters:
+          - StripPrefix=2     
+      - id: app-preguntasrespuestas
+        uri: lb://app-preguntasrespuestas
+        predicates:
+          - Path=/api/preguntasrespuestas/**
+        filters:
+          - StripPrefix=2      
+      - id: app-parametrizacion
+        uri: lb://app-parametrizacion
+        predicates:
+          - Path=/api/parametrizacion/**
+        filters:
+          - StripPrefix=2      
+      - id: app-retos
+        uri: lb://app-retos
+        predicates:
+          - Path=/api/retos/**
+        filters:
+          - StripPrefix=2      
+      - id: app-suscripcionesretos
+        uri: lb://app-suscripcionesretos
+        predicates:
+          - Path=/api/suscripcionesretos/**
+        filters:
+          - StripPrefix=2   
+      - id: app-estadisticaretos
+        uri: lb://app-estadisticaretos
+        predicates:
+          - Path=/api/estadisticaretos/**
+        filters:
+          - StripPrefix=2  
+      - id: app-busqueda
+        uri: lb://app-busqueda
+        predicates:
+          - Path=/api/busqueda/**
+        filters:
+          - StripPrefix=2  
+      - id: app-recomendacion
+        uri: lb://app-recomendacion
+        predicates:
+          - Path=/api/recomendacion/**
+        filters:
+          - StripPrefix=2  
+      - id: app-notificaciones
+        uri: lb://app-notificaciones
+        predicates:
+          - Path=/api/notificaciones/**
+        filters:
+          - StripPrefix=2  
+      - id: app-interventor
+        uri: lb://app-interventor
+        predicates:
+          - Path=/api/interventor/**
+        filters:
+          - StripPrefix=2        
